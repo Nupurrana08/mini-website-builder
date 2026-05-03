@@ -1,0 +1,70 @@
+@use '../../styles/vars' as *;
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: $surface;
+  border-bottom: 1px solid $border;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: $primary;
+  letter-spacing: -.01em;
+
+  svg { color: $primary; }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: .9rem;
+
+  a {
+    color: $text-muted;
+    transition: color .15s;
+    &:hover, &.active { color: $text; }
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: $border;
+}
+
+.userName {
+  font-weight: 500;
+  color: $text;
+  font-size: .875rem;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  border-top: 1px solid $border;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: .82rem;
+  color: $text-muted;
+}

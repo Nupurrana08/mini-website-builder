@@ -1,0 +1,43 @@
+@use '../vars' as *;
+@use '../globals' as *;
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.2rem;
+  height: 52px;
+  border-bottom: 1px solid $border;
+  background: $surface;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.siteName {
+  font-weight: 600;
+  font-size: .9rem;
+  color: $text;
+  flex: 1;
+}
+
+.saved {
+  font-size: .82rem;
+  color: #16a34a;
+  font-weight: 600;
+  animation: fadeIn .2s ease;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  color: $text-muted;
+  font-size: .95rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

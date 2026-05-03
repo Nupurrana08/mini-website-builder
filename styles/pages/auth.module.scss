@@ -1,0 +1,51 @@
+@use '../vars' as *;
+@use '../globals' as *;
+
+.wrapper {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: $shadow-md;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+
+.sub {
+  font-size: .9rem;
+  color: $text-muted;
+  margin-bottom: 1.75rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link {
+  margin-top: 1.5rem;
+  font-size: .875rem;
+  color: $text-muted;
+  text-align: center;
+
+  a {
+    color: $primary;
+    font-weight: 600;
+    &:hover { text-decoration: underline; }
+  }
+}

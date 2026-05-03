@@ -1,0 +1,20 @@
+import { connectDB } from '../../../lib/mongodb'
+import User from '../../../models/User'
+import { getUserFromRequest } from '../../../lib/auth'
+
+export default async function handler(req, res) {
+  if (req.method !== 'GET') return res.status(405).end()
+
+  const payload = getUserFromRequest(req)
+  if (!payload) return res.status(401).json({ error: 'Unauthenticated' })
+
+  try {
+    await connectDB()
+    const user = await User.findById(payload.userId).select('-passwordHash')
+    if (!user) return res.status(404).json({ error: 'User not found' })
+    return res.status(200).json({ user })
+  } catch (err) {
+    console.error('[me]', err)
+    return res.status(500).json({ error: 'Internal server error' })
+  }
+}

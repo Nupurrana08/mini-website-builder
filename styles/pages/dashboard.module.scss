@@ -1,0 +1,105 @@
+@use '../vars' as *;
+@use '../globals' as *;
+
+.page {
+  padding: 2.5rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: .2rem;
+}
+
+.sub {
+  font-size: .9rem;
+  color: $text-muted;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.statCard {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  min-width: 120px;
+  box-shadow: $shadow;
+}
+
+.statVal {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: $primary;
+}
+
+.statLabel {
+  font-size: .8rem;
+  color: $text-muted;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+// Create form
+.createBox {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 1.75rem;
+  box-shadow: $shadow;
+}
+
+.createTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.createForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.createActions {
+  display: flex;
+  gap: .75rem;
+}
+
+// Grid
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  padding: 4rem 1rem;
+  color: $text-muted;
+  font-size: .95rem;
+  text-align: center;
+
+  span { font-size: 2.5rem; }
+}
