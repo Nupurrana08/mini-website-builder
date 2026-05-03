@@ -18,7 +18,7 @@ export default function Layout({ children }) {
               <rect x="3" y="14" width="7" height="7" rx="1"/>
               <rect x="14" y="14" width="7" height="7" rx="1"/>
             </svg>
-            SiteForge
+            SiteCraft
           </Link>
 
           <nav className={styles.nav}>
@@ -46,7 +46,7 @@ export default function Layout({ children }) {
       <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} SiteForge · Built for evaluation purposes</p>
+        <p>© {new Date().getFullYear()} SiteCraft · Built for evaluation purposes</p>
       </footer>
     </div>
   )

@@ -5,27 +5,29 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0 1.2rem;
-  height: 52px;
+  padding: 0 1.25rem;
+  height: 56px;
   border-bottom: 1px solid $border;
-  background: $surface;
+  background: rgba($surface, 0.98);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 200;
+  animation: fadeInDown $transition-base ease;
 }
 
 .siteName {
   font-weight: 600;
-  font-size: .9rem;
+  font-size: .92rem;
   color: $text;
   flex: 1;
 }
 
 .saved {
   font-size: .82rem;
-  color: #16a34a;
+  color: $success;
   font-weight: 600;
-  animation: fadeIn .2s ease;
+  animation: fadeInUp $transition-base ease;
 }
 
 .center {
@@ -35,9 +37,5 @@
   height: 60vh;
   color: $text-muted;
   font-size: .95rem;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  animation: fadeIn $transition-slow ease;
 }

@@ -47,7 +47,7 @@ export default function BuilderPage() {
 
   return (
     <>
-      <Head><title>Editing: {site?.title} · SiteForge</title></Head>
+      <Head><title>Editing: {site?.title} · SiteCraft</title></Head>
 
       {/* Minimal top bar for the builder (no full Layout to maximise screen space) */}
       <div className={styles.topBar}>

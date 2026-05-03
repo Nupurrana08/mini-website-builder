@@ -61,7 +61,7 @@ export default function Dashboard() {
 
   return (
     <Layout>
-      <Head><title>Dashboard · SiteForge</title></Head>
+      <Head><title>Dashboard · SiteCraft</title></Head>
 
       <div className="container">
         <div className={styles.page}>

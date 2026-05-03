@@ -27,7 +27,7 @@ export default function SiteRenderer({ site }) {
       })}
 
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} {site.title} · Powered by SiteForge</p>
+        <p>© {new Date().getFullYear()} {site.title} · Powered by SiteCraft</p>
       </footer>
     </div>
   )

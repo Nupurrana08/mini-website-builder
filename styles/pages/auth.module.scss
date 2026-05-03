@@ -2,31 +2,49 @@
 @use '../globals' as *;
 
 .wrapper {
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 130px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba($primary, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
 }
 
 .card {
   background: $surface;
   border: 1px solid $border;
-  border-radius: $radius;
+  border-radius: $radius-lg;
   padding: 2.5rem 2rem;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   box-shadow: $shadow-md;
+  animation: scaleIn $transition-base ease;
+
+  @media (max-width: 480px) {
+    padding: 2rem 1.5rem;
+  }
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: .3rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: .35rem;
+  letter-spacing: -0.02em;
 }
 
 .sub {
-  font-size: .9rem;
+  font-size: .92rem;
   color: $text-muted;
   margin-bottom: 1.75rem;
 }
@@ -34,7 +52,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .link {
@@ -46,6 +64,11 @@
   a {
     color: $primary;
     font-weight: 600;
-    &:hover { text-decoration: underline; }
+    transition: color $transition-fast;
+
+    &:hover {
+      text-decoration: underline;
+      color: $primary-dark;
+    }
   }
 }

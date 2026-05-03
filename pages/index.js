@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Head><title>SiteForge – Build your site</title></Head>
+      <Head><title>SiteCraft – Build your site</title></Head>
 
       <section className={styles.hero}>
         <div className="container">
@@ -26,7 +26,7 @@ export default function Home() {
           </h1>
           <p className={styles.sub}>
             Pick a template, fill in your content, hit publish. <br />
-            SiteForge gives every user their own workspace and public URL.
+            SiteCraft gives every user their own workspace and public URL.
           </p>
           <div className={styles.ctas}>
             <Link href="/signup" className="btn btn--primary btn--lg">Get started free</Link>

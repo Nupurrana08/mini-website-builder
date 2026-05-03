@@ -5,38 +5,55 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: .4rem;
-  padding: 1.25rem;
+  gap: .5rem;
+  padding: 1.4rem;
   background: $surface;
   border: 2px solid $border;
   border-radius: $radius;
   cursor: pointer;
   text-align: left;
-  transition: border-color .18s, box-shadow .18s;
+  transition: all $transition-base;
 
-  &:hover { border-color: $primary; }
+  &:hover {
+    border-color: $primary;
+    box-shadow: $shadow;
+    transform: translateY(-2px);
+  }
 
   &.selected {
     border-color: $primary;
-    box-shadow: 0 0 0 3px rgba($primary, .15);
+    background: linear-gradient(135deg, rgba($primary, 0.03), rgba($accent, 0.03));
+    box-shadow: 0 0 0 3px rgba($primary, 0.12), $shadow;
   }
 }
 
-.icon { font-size: 1.6rem; }
+.icon {
+  font-size: 1.75rem;
+  transition: transform $transition-spring;
+
+  .card:hover & {
+    transform: scale(1.1);
+  }
+}
 
 .label {
-  font-size: .95rem;
+  font-size: .98rem;
   color: $text;
+  font-weight: 600;
 }
 
 .desc {
-  font-size: .8rem;
+  font-size: .82rem;
   color: $text-muted;
-  line-height: 1.5;
+  line-height: 1.55;
 }

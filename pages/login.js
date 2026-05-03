@@ -35,11 +35,11 @@ export default function Login() {
 
   return (
     <Layout>
-      <Head><title>Login · SiteForge</title></Head>
+      <Head><title>Login · SiteCraft</title></Head>
       <div className={styles.wrapper}>
         <div className={styles.card}>
           <h1 className={styles.title}>Welcome back</h1>
-          <p className={styles.sub}>Sign in to your SiteForge account</p>
+          <p className={styles.sub}>Sign in to your SiteCraft account</p>
 
           <form onSubmit={handle} className={styles.form}>
             <div>

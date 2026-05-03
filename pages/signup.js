@@ -35,7 +35,7 @@ export default function Signup() {
 
   return (
     <Layout>
-      <Head><title>Sign up · SiteForge</title></Head>
+      <Head><title>Sign up · SiteCraft</title></Head>
       <div className={styles.wrapper}>
         <div className={styles.card}>
           <h1 className={styles.title}>Create your account</h1>

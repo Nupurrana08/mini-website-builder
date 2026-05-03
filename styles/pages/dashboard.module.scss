@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  animation: fadeInUp $transition-slow ease;
 }
 
 .header {
@@ -13,16 +14,26 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 }
 
 .title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: .2rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: .25rem;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .sub {
-  font-size: .9rem;
+  font-size: .95rem;
   color: $text-muted;
 }
 
@@ -36,39 +47,47 @@
   background: $surface;
   border: 1px solid $border;
   border-radius: $radius;
-  padding: 1.2rem 1.6rem;
+  padding: 1.25rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: .2rem;
-  min-width: 120px;
-  box-shadow: $shadow;
+  gap: .25rem;
+  min-width: 130px;
+  box-shadow: $shadow-sm;
+  transition: all $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
 }
 
 .statVal {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 800;
   color: $primary;
+  line-height: 1;
 }
 
 .statLabel {
-  font-size: .8rem;
+  font-size: .75rem;
   color: $text-muted;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: .05em;
 }
 
 // Create form
 .createBox {
   background: $surface;
   border: 1px solid $border;
-  border-radius: $radius;
-  padding: 1.75rem;
-  box-shadow: $shadow;
+  border-radius: $radius-lg;
+  padding: 2rem;
+  box-shadow: $shadow-sm;
+  animation: scaleIn $transition-base ease 0.1s both;
 }
 
 .createTitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
 }
@@ -76,30 +95,43 @@
 .createForm {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1.2rem;
 }
 
 .createActions {
   display: flex;
   gap: .75rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+    .btn { width: 100%; }
+  }
 }
 
 // Grid
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 .empty {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .75rem;
+  gap: 1rem;
   padding: 4rem 1rem;
   color: $text-muted;
-  font-size: .95rem;
+  font-size: 1rem;
   text-align: center;
+  animation: fadeIn $transition-slow ease;
 
-  span { font-size: 2.5rem; }
+  span { font-size: 3rem; }
 }

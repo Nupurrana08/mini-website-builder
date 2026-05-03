@@ -61,7 +61,7 @@ function buildDefaultSections(template) {
       type: 'hero',
       content: {
         heading: 'Welcome to my site',
-        subheading: 'Built with SiteForge',
+        subheading: 'Built with SiteCraft',
         body: '',
         ctaLabel: 'Get Started',
         email: '',

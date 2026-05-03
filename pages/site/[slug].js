@@ -13,7 +13,7 @@ export default function PublicSitePage({ site, notFound }) {
         <span style={{ fontSize: '3rem' }}>🔍</span>
         <h1 style={{ fontSize: '1.3rem', fontWeight: 700 }}>Site not found</h1>
         <p style={{ fontSize: '.9rem' }}>This site doesn't exist or hasn't been published yet.</p>
-        <a href="/" style={{ color: '#6366f1', fontWeight: 600, fontSize: '.9rem' }}>← Back to SiteForge</a>
+        <a href="/" style={{ color: '#6366f1', fontWeight: 600, fontSize: '.9rem' }}>← Back to SiteCraft</a>
       </div>
     )
   }
