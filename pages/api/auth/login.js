@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     setTokenCookie(res, token)
 
     return res.status(200).json({
-      user: { id: user._id, name: user.name, email: user.email },
+      user: { id: user._id, name: user.name, email: user.email, tenantId },
     })
   } catch (err) {
     console.error('[login] Error:', err.message, err.stack)

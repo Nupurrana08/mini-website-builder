@@ -14,7 +14,14 @@ export default async function handler(req, res) {
     const user = await User.findById(payload.userId).select('-passwordHash')
     console.log('User found:', user ? 'yes' : 'no')
     if (!user) return res.status(404).json({ error: 'User not found' })
-    return res.status(200).json({ user })
+    return res.status(200).json({ 
+      user: { 
+        id: user._id, 
+        name: user.name, 
+        email: user.email,
+        tenantId: user.tenantId 
+      } 
+    })
   } catch (err) {
     console.error('[me] Error:', err.message)
     return res.status(500).json({ error: 'Internal server error: ' + err.message })

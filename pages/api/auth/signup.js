@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     setTokenCookie(res, token)
 
     return res.status(201).json({
-      user: { id: user._id, name: user.name, email: user.email },
+      user: { id: user._id, name: user.name, email: user.email, tenantId: user.tenantId },
     })
   } catch (err) {
     console.error('[signup]', err)
