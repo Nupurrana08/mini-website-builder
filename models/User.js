@@ -43,6 +43,14 @@ UserSchema.pre('save', async function (next) {
   next()
 })
 
+// Auto-set tenantId = _id on creation
+UserSchema.pre('save', function (next) {
+  if (this.isNew && !this.tenantId) {
+    this.tenantId = this._id
+  }
+  next()
+})
+
 UserSchema.methods.comparePassword = async function (plain) {
   return bcrypt.compare(plain, this.passwordHash)
 }

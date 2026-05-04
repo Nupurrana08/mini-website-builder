@@ -29,12 +29,7 @@ export default async function handler(req, res) {
       name,
       email,
       passwordHash: password,
-      tenantId: null, // Will be set to _id after creation
     })
-
-    // Set tenantId = _id (self-tenant model)
-    user.tenantId = user._id
-    await user.save()
 
     const token = signToken({ userId: user._id.toString(), tenantId: user._id.toString() })
     setTokenCookie(res, token)
