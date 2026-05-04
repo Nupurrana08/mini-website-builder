@@ -1,17 +1,17 @@
-# SiteForge – Multi-Tenant Website Builder
+# SiteCraft – Multi-Tenant Website Builder
 
 A mini Wix/Shopify-style platform where users can create and publish websites using predefined templates.
 
-**Live demo:** `https://siteforge.vercel.app` _(update after deploy)_  
-**GitHub:** `https://github.com/yourusername/siteforge`
+**Live demo:** `https://mini-website-builder-ci.vercel.app/` _(update after deploy)_  
+**GitHub:** `https://github.com/Nupurrana08/mini-website-builder`
 
 ---
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/yourusername/siteforge
-cd siteforge
+git clone https://github.com/Nupurrana08/mini-website-builder
+cd mini-website-builder
 npm install
 cp .env.example .env.local   # fill in your values
 npm run dev                   # http://localhost:3000
@@ -201,10 +201,7 @@ Logout
 
 ### Vercel (Frontend + API Routes)
 
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
+```
 vercel --prod
 # Set environment variables in Vercel dashboard:
 # MONGODB_URI, JWT_SECRET, NEXT_PUBLIC_BASE_URL
