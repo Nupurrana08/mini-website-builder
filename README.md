@@ -2,7 +2,7 @@
 
 A mini Wix/Shopify-style platform where users can create and publish websites using predefined templates.
 
-**Live demo:** `https://mini-website-builder-ci.vercel.app/` _(update after deploy)_  
+**Live demo:** `https://mini-website-builder-ci.vercel.app/`  
 **GitHub:** `https://github.com/Nupurrana08/mini-website-builder`
 
 ---
@@ -23,7 +23,7 @@ npm run dev                   # http://localhost:3000
 |---|---|
 | `MONGODB_URI` | MongoDB Atlas connection string |
 | `JWT_SECRET` | Secret for signing JWT tokens (use a long random string) |
-| `NEXT_PUBLIC_BASE_URL` | Base URL (e.g. `https://siteforge.vercel.app`) |
+| `NEXT_PUBLIC_BASE_URL` | Base URL  |
 
 ---
 
