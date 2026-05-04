@@ -13,6 +13,8 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('Login attempt:', email)
+    console.log('MongoDB URI set:', !!process.env.MONGODB_URI)
     await connectDB()
 
     // passwordHash is excluded by default; we explicitly select it here
@@ -34,7 +36,7 @@ export default async function handler(req, res) {
       user: { id: user._id, name: user.name, email: user.email },
     })
   } catch (err) {
-    console.error('[login]', err)
-    return res.status(500).json({ error: 'Internal server error' })
+    console.error('[login] Error:', err.message, err.stack)
+    return res.status(500).json({ error: 'Internal server error: ' + err.message })
   }
 }

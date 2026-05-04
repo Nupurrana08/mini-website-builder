@@ -17,6 +17,7 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI)
     await connectDB()
 
     const exists = await User.findOne({ email: email.toLowerCase() })
