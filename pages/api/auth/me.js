@@ -10,11 +10,13 @@ export default async function handler(req, res) {
 
   try {
     await connectDB()
+    console.log('Fetching user:', payload.userId)
     const user = await User.findById(payload.userId).select('-passwordHash')
+    console.log('User found:', user ? 'yes' : 'no')
     if (!user) return res.status(404).json({ error: 'User not found' })
     return res.status(200).json({ user })
   } catch (err) {
-    console.error('[me]', err)
-    return res.status(500).json({ error: 'Internal server error' })
+    console.error('[me] Error:', err.message)
+    return res.status(500).json({ error: 'Internal server error: ' + err.message })
   }
 }

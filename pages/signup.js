@@ -26,7 +26,7 @@ export default function Signup() {
       const data = await res.json()
       if (!res.ok) { setError(data.error); setLoading(false); return }
       setUser(data.user)
-      router.push('/dashboard')
+      router.replace('/dashboard')
     } catch {
       setError('Something went wrong')
       setLoading(false)
